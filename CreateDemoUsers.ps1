@@ -145,6 +145,7 @@ if ($i -lt $userCount)
    $officePhone = $phoneCountryCodes[$country] + "-" + $postalAreaCodes[$postalCode].Substring(1) + "-" + (Get-Random -Minimum 100000 -Maximum 1000000)
    
    # Build the sAMAccountName: $orgShortName + employee number
+   $employeeNumber = 1
    $sAMAccountName = $orgShortName + $employeeNumber
    $userExists = $false
    Try   { $userExists = Get-ADUser -LDAPFilter "(sAMAccountName=$sAMAccountName)" }
